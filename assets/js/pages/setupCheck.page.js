@@ -35,7 +35,7 @@ class SetupCheck extends Component {
             <div>
                 <section className="row-section">
                     <div className="container">
-                        <div className="row mt-5">
+                        <div className="row">
                             <div className="col-md-8 offset-md-2">
                                 <h2 className="text-center"><span>This is a test</span> @ Telemedi</h2>
 
