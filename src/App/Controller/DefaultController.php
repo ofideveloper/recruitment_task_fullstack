@@ -8,7 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-
 class DefaultController extends AbstractController
 {
 
@@ -32,17 +31,4 @@ class DefaultController extends AbstractController
             ['Content-type' => 'application/json']
         );
     }
-
-    public function exchangeRates(Request $request): Response
-    {
-        $req = $response = file_get_contents("https://api.nbp.pl/api/exchangerates/tables/A/?format=json");
-        $responseContent = $req;
-        return new Response(
-            $responseContent,
-            Response::HTTP_OK,
-            ['Content-type' => 'application/json']
-        );
-    }
-
-
 }

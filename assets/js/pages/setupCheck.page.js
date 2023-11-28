@@ -2,6 +2,7 @@
 
 import React, {Component} from 'react';
 import axios from 'axios';
+import LoadingOrContent from '../components/LoadingOrContent/LoadingOrContent'
 
 class SetupCheck extends Component {
     constructor() {
@@ -31,28 +32,24 @@ class SetupCheck extends Component {
 
     render() {
         const loading = this.state.loading;
+
         return(
             <div>
                 <section className="row-section">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-8 offset-md-2">
-                                <h2 className="text-center"><span>This is a test</span> @ Telemedi</h2>
+                    
+                    <div className="row">
+                        <div className="col-md-8 offset-md-2">
+                            <h2 className="text-center"><span>This is a test</span> @ Telemedi</h2>
 
-                                {loading ? (
-                                    <div className={'text-center'}>
-                                        <span className="fa fa-spin fa-spinner fa-4x"></span>
-                                    </div>
-                                ) : (
-                                    <div className={'text-center'}>
-                                        { this.state.setupCheck === true ? (
-                                            <h3 className={'text-success text-bold'}><strong>React app works!</strong></h3>
-                                        ) : (
-                                            <h3 className={'text-error text-bold'}><strong>React app doesn't work :(</strong></h3>
-                                        )}
-                                    </div>
-                                )}
-                            </div>
+                            <LoadingOrContent isLoading={loading}>
+                                <div className={'text-center'}>
+                                    { this.state.setupCheck === true ? (
+                                        <h3 className={'text-success text-bold'}><strong>React app works!</strong></h3>
+                                    ) : (
+                                        <h3 className={'text-error text-bold'}><strong>React app doesn't work :(</strong></h3>
+                                    )}
+                                </div>
+                            </LoadingOrContent>
                         </div>
                     </div>
                 </section>
