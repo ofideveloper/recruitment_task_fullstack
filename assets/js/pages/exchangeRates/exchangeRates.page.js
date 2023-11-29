@@ -59,9 +59,12 @@ export default function Page({match}) {
 		history.push(`/exchange-rates/${newDate}`)
 	}
 
-	useEffect(() => {
-		let weekend = moment(currentDay)
-	  }, [currentDay]);
+	// TODO
+	// - check date is valid or API provide any data for selected day
+
+	// useEffect(() => {
+	// 	let weekend = moment(currentDay)
+	//   }, [currentDay]);
 
 	let renderCompareCurrencyBlock = ({ today, compare }) => {
 		return <>
