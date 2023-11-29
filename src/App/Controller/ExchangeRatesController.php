@@ -89,7 +89,6 @@ class ExchangeRatesController extends AbstractController
 							'exchangeMid' => $apiCurrencyVal['mid'],
 							'exchangeBuy' => ($v['buySpread'] ? round($apiCurrencyVal['mid'] + $v['buySpread'], 4) : False),
 							'exchangeSell' => ($v['sellSpread'] ? round($apiCurrencyVal['mid'] + $v['sellSpread'], 4) : False),
-							'sth' => $request->attributes->get('date')
 						]); 
 					}
 				  }

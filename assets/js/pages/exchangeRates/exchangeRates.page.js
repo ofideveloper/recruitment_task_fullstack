@@ -150,8 +150,6 @@ export default function Page({match}) {
 			<div className="div">Select date: <input type="date" id="start" defaultValue={dateParam ? dateParam : currentDay} onChange={ (e) => setDate(e.currentTarget.value) } min="2023-01-01" /></div>
 		</div>
 
-		{/* { dateParam && exchangeRatesFromParam } */}
-
 		<LoadingOrContent isLoading={ isLoading || isLoadingCompare }>
 			{ exchangeRatesToday ? (
 				<div>
