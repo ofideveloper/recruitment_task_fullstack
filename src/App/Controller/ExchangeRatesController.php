@@ -62,12 +62,14 @@ class ExchangeRatesController extends AbstractController
 
 		$reqDate = $request->attributes->get('date');
 
+		// TODO
+		// - check that NBP API is available for those dates that user request
 		if ($reqDate) {
-			$apiData = file_get_contents("https://api.nbp.pl/api/exchangerates/tables//A/".$reqDate."?format=json");
+			$apiData = file_get_contents("https://api.nbp.pl/api/exchangerates/tables/A/".$reqDate."?format=json");
 		} else {
 			$apiData = file_get_contents("https://api.nbp.pl/api/exchangerates/tables/A/?format=json");
 		}
-        // $responseContent = $req;
+
 		$cantorExchangeData = $this->getCantorExchangeData();
 		$cantorExchangeDataDecoded = json_decode($cantorExchangeData, true);
 
