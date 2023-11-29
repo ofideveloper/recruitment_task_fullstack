@@ -26,9 +26,7 @@ export default function Header () {
 				<ul className="navbar-nav mr-auto">
 					{ NaviLinks.map((item, index) => (
 						<li className="nav-item" key={ index }>
-
-							{/* { JSON.stringify(item) } */}
-							<Link className={`nav-link ${ location.pathname === item.path ? 'active' : '' }`} to={item.path}> { item.label } </Link>
+							<Link className={`nav-link ${ location.pathname.indexOf(item.path) == 0 ? 'active' : '' }`} to={item.path}> { item.label } </Link>
 						</li>
 					)) }
 				</ul>

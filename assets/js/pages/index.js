@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import {Route, Redirect, Switch, Link} from 'react-router-dom';
 import PageHome from './home.page'
 import PageSetupCheck from "./setupCheck.page";
-import PageExchangeRates from "./exchangeRates.page";
+import PageExchangeRates from "./exchangeRates/exchangeRates.page";
 import Layout from '../components/Layout/Layout.component'
 import Header from '../components/Header/Header.component'
 
@@ -18,7 +18,8 @@ class Pages extends Component {
 					<Switch>
 						<Route exact path="/" component={ PageHome } />
 						<Route path="/setup-check" component={ PageSetupCheck } />
-						<Route path="/exchange-rates" component={ PageExchangeRates } />
+						<Route path="/exchange-rates/" exact component={ PageExchangeRates } /> 
+						<Route path="/exchange-rates/:date" exact component={ PageExchangeRates } />
 					</Switch>
 				</Layout>
             </div>

@@ -13,8 +13,6 @@ const useFetch = ({queryURL, initialData = false, options={}, fetcher = jsonFetc
 		isLoading,
 		mutate
 	}
-
-	console.log('pay', pay)
 	
 	return pay
 }
