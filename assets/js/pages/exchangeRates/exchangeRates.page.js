@@ -44,8 +44,6 @@ export default function Page({match}) {
 	} } = match
 	const history = useHistory()
 
-	let [isWeekend, setIsWeekend] = useState(false)
-
 	let [ currentDay, setDay ] = useState(`${moment().format('YYYY-MM-DD')}`)
 
 	const { response: exchangeRatesToday, isLoading } = useFetch({ queryURL: apiRoutes.exchangeRates.get, initialData: [] })
@@ -55,7 +53,6 @@ export default function Page({match}) {
 	const { response: exchangeRatesFromDate, isLoading: isLoadingCompare } = useFetch({ queryURL: dateParam ? `${apiRoutes.exchangeRates.get}/${dateParam}` : null, initialData: [] })
 
 	let setDate = (newDate) => {
-		let day = new Date(newDate)
 		history.push(`/exchange-rates/${newDate}`)
 	}
 
@@ -63,7 +60,7 @@ export default function Page({match}) {
 	// - check date is valid or API provide any data for selected day
 
 	// useEffect(() => {
-	// 	let weekend = moment(currentDay)
+	// if is 
 	//   }, [currentDay]);
 
 	let renderCompareCurrencyBlock = ({ today, compare }) => {
