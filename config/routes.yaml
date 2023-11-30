@@ -8,6 +8,14 @@ setupcheck:
     path: /api/setup-check
     controller: App\Controller\DefaultController::setupCheck
 
+exchangerates:
+    path: /api/exchange-rates
+    controller: App\Controller\ExchangeRatesController::exchangeRates
+
+exchangeratesdate:
+    path: /api/exchange-rates/{date}
+    controller: App\Controller\ExchangeRatesController::exchangeRates
+
 index:
     path: /{wildcard}
     defaults: {
