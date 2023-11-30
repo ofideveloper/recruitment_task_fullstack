@@ -7,14 +7,12 @@ const useFetch = ({queryURL, initialData = false, options={}, fetcher = jsonFetc
 		...options
 	});
 	
-	let pay = {
+	return {
 		response: data,
 		error,
 		isLoading,
 		mutate
 	}
-	
-	return pay
 }
 
 export default useFetch
